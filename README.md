@@ -1,3 +1,7 @@
+# My learning e-commerce project in React
+
+Live site hosted at Github Pages: [CRWN clothing site](https://DaveKentucky.github.io/crwn-clothing/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
