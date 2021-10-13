@@ -34,6 +34,7 @@ class App extends React.Component {
             }
           })
         });
+        console.log(this.state);
       } else {
         this.setState({ currentUser: userAuth });
       }
@@ -49,9 +50,9 @@ class App extends React.Component {
       <div>
         <Header currentUser={ this.state.currentuser }/>
         <Switch>
-          <Route exact path='/' component={HomePage} />
-          <Route path='/shop' component={ShopPage} />
-          <Route path='/sign-in' component={SignInAndSignUpPage} />
+          <Route exact path='/' component={ HomePage } />
+          <Route path='/shop' component={ ShopPage } />
+          <Route path='/sign-in' component={ SignInAndSignUpPage } />
         </Switch>
       </div>
     );
