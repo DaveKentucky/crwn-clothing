@@ -3,9 +3,14 @@
   flex-direction: column;
   margin-bottom: 30px;
 
-  .title {
-    font-size: 28px;
-    margin-bottom: 25px;
+  .title-link {
+    align-self: flex-start;
+
+    .title {
+      font-size: 28px;
+      margin-bottom: 25px;
+      cursor: pointer;
+    }
   }
 
   .preview {
