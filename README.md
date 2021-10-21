@@ -1,6 +1,12 @@
 # My learning e-commerce project in React
 
-Live site hosted at Github Pages: [CRWN clothing site](https://DaveKentucky.github.io/crwn-clothing/)
+### Welcome to my CRWN clothing project repository!
+
+This is my first larger project in React. The app is an ecommerce platform for a little clothing shop. It simulates a real life scenario and enables all the basic functionalities such a platform should have, including: user authentication, managing the cart and processing payments.
+
+### Live site
+
+You can check out my app hosted at Heroku: [CRWN clothing site](https://davekentucky-crwn.herokuapp.com/)
 
 # Tech Stack
 
@@ -15,6 +21,12 @@ Find out more: [React](https://pl.reactjs.org/)
 The app state is controlled with the React Redux library and appropirate reducers for shop items and users data. The state is managed with selectors implemented using the redux-reselct library.
 
 Find out more: [React Redux](https://react-redux.js.org/)
+
+## React Router
+
+React Router is the library providing routing in the SPA (Single Page Application) created with React. I have used the routing between main pages of the site as well as the specific collections overview pages.
+
+Find out more: [React Router](https://reactrouter.com/)
 
 ## Firebase
 
