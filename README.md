@@ -2,6 +2,32 @@
 
 Live site hosted at Github Pages: [CRWN clothing site](https://DaveKentucky.github.io/crwn-clothing/)
 
+# Tech Stack
+
+## React
+
+The app was built with Create React App, which You can read about below. I have used functional and class components so far and sticked to the fundamental practices of React framework.
+
+Find out more: [React](https://pl.reactjs.org/)
+
+## Redux
+
+The app state is controlled with the React Redux library and appropirate reducers for shop items and users data. The state is managed with selectors implemented using the redux-reselct library.
+
+Find out more: [React Redux](https://react-redux.js.org/)
+
+## Firebase
+
+The Firebase connection handles user authentication and simple data storage in the Firestore.
+
+Find out more: [Firebase](https://firebase.google.com/)
+
+## Stripe
+
+The app includes Stripe payments integration. The backend for processing payments is not implemented yet, but payments can be tested with provided test card data.
+
+Find out more: [Stripe](https://stripe.com/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -48,27 +74,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
