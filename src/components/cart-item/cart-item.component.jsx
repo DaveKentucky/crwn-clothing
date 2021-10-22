@@ -1,5 +1,6 @@
+// libraries
 import React from "react";
-
+// styles
 import './cart-item.styles.scss';
 
 
