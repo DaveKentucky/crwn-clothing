@@ -28,6 +28,12 @@ React Router is the library providing routing in the SPA (Single Page Applicatio
 
 Find out more: [React Router](https://reactrouter.com/)
 
+## styled-components
+
+The styling of elements was implemented in the styled-components library pattern. The CSS rules (strictly SCSS) are implemented inside proper JS files instead of seperate SCSS files. The benefit of such approach is that every component has its own styling all written in JS, which is easier to read (no unnecesarry nesting of SASS instructions) and more convenient to inject JS properties or functions (no need of using SASS mixins).
+
+Find out more: [styled-components](https://styled-components.com/)
+
 ## Firebase
 
 The Firebase connection handles user authentication and simple data storage in the Firestore.
