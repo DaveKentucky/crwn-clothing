@@ -3,8 +3,6 @@ import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-// styles
-import './App.css';
 // pages
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
@@ -17,6 +15,9 @@ import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 // redux
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors'
+// styles
+import './App.css';
+
 
 class App extends React.Component { 
   unsubscribeFromAuth = null;
