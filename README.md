@@ -22,6 +22,12 @@ The app state is controlled with the React Redux library and appropirate reducer
 
 Find out more: [React Redux](https://react-redux.js.org/)
 
+## Redux Reselect
+
+The app implements store selectors created with Reselect library. This is a Redux additional library that covers memoization of selector functions. This way the components won't have to rerender everytime a selector is fired with the exact same params. The Reselct library helps to improve the efficiency of the Redux code.
+
+Find out more: [Redux Reselct](https://github.com/reduxjs/reselect)
+
 ## React Router
 
 React Router is the library providing routing in the SPA (Single Page Application) created with React. I have used the routing between main pages of the site as well as the specific collections overview pages.
@@ -36,7 +42,7 @@ Find out more: [styled-components](https://styled-components.com/)
 
 ## Firebase
 
-The Firebase connection handles user authentication and simple data storage in the Firestore.
+The Firebase connection handles user authentication and data storage in the nonSQL Firestore database that Google Firebase provides. The shop items data are fetched from the Firebase and the users' data are stored there as well.
 
 Find out more: [Firebase](https://firebase.google.com/)
 
