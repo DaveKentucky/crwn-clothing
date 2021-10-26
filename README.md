@@ -8,7 +8,9 @@ This is my first larger project in React. The app is an ecommerce platform for a
 
 You can check out my app hosted at Heroku: [CRWN clothing site](https://davekentucky-crwn.herokuapp.com/)
 
-# Tech Stack
+# Frameworks and libraries
+
+This chapter covers the most important frameworks and libraries I have used in the project.
 
 ## React
 
