@@ -8,9 +8,19 @@ This is my first larger project in React. The app is an ecommerce platform for a
 
 You can check out my app hosted at Heroku: [CRWN clothing site](https://davekentucky-crwn.herokuapp.com/)
 
-# Frameworks and libraries
+# Tech stack
 
 This chapter covers the most important frameworks and libraries I have used in the project.
+
+### Table of contents
+
+- [React](#react)
+- [Redux](#redux)
+- [Reselect](#redux-reselect)
+- [React Router](#react-router)
+- [Styled Components](#styled-components)
+- [Firebase](#firebase)
+- [Stripe](#stripe)
 
 ## React
 
@@ -36,7 +46,7 @@ React Router is the library providing routing in the SPA (Single Page Applicatio
 
 Find out more: [React Router](https://reactrouter.com/)
 
-## styled-components
+## Styled Components
 
 The styling of elements was implemented in the styled-components library pattern. The CSS rules (strictly SCSS) are implemented inside proper JS files instead of seperate SCSS files. The benefit of such approach is that every component has its own styling all written in JS, which is easier to read (no unnecesarry nesting of SASS instructions) and more convenient to inject JS properties or functions (no need of using SASS mixins).
 
