@@ -16,7 +16,8 @@ This chapter covers the most important frameworks and libraries I have used in t
 
 - [React](#react)
 - [Redux](#redux)
-- [Reselect](#redux-reselect)
+    - [Reselect](#redux-reselect)
+    - [Sagas](#redux-saga)
 - [React Router](#react-router)
 - [Styled Components](#styled-components)
 - [Firebase](#firebase)
@@ -34,11 +35,17 @@ The app state is controlled with the React Redux library and appropirate reducer
 
 Find out more: [React Redux](https://react-redux.js.org/)
 
-## Redux Reselect
+### Redux Reselect
 
 The app implements store selectors created with Reselect library. This is a Redux additional library that covers memoization of selector functions. This way the components won't have to rerender everytime a selector is fired with the exact same params. The Reselct library helps to improve the efficiency of the Redux code.
 
 Find out more: [Redux Reselct](https://github.com/reduxjs/reselect)
+
+### Redux Saga
+
+The asynchronous API requests have been implemented with usage of redux-saga library. The saga middleware allows to create listener generator functions that catch redux actions and perform the asynchronous calls and puts fetched data back into the redux flow without blocking it. This way we can move the async calls out of the components and even out of the redux selectors into its seperate async based code block.
+
+Find out more: [Redux Saga](https://redux-saga.js.org/)
 
 ## React Router
 
