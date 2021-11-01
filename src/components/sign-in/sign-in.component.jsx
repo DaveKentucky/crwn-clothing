@@ -6,7 +6,7 @@ import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 // styles
 import { SignInContainer, ButtonsContainer } from './sign-in.styles';
-
+// redux
 import { googleSignInStart, emailSignInStart } from '../../redux/user/user.actions';
 
 
