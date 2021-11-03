@@ -1,6 +1,6 @@
 // libraries
 import React from "react";
-import { withRouter } from "react-router";
+import { useHistory, useRouteMatch } from "react-router-dom";
 // styles
 import {
   MenuItemContainer,
@@ -11,7 +11,11 @@ import {
 } from './menu-item.styles';
 
 
-const MenuItem = ( {title, imageUrl, size, history, linkUrl, match} ) => (
+const MenuItem = ( { title, imageUrl, size, linkUrl } ) => {
+  let history = useHistory();
+  const match = useRouteMatch();
+
+  return (
     <MenuItemContainer 
       size={ size }
       onClick={() => history.push(`${match.url}${linkUrl}`)}
@@ -25,6 +29,7 @@ const MenuItem = ( {title, imageUrl, size, history, linkUrl, match} ) => (
         <SubtitleContainer>SHOP NOW</SubtitleContainer>
       </ContentContainer>
     </MenuItemContainer>
-)
+  );
+};
 
-export default withRouter(MenuItem);
+export default MenuItem;

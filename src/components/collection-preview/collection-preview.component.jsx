@@ -1,6 +1,6 @@
 // libraries
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { useRouteMatch } from "react-router-dom";
 // components
 import CollectionItem from "../collection-item/collection-item.component";
 // styles
@@ -12,7 +12,10 @@ import {
 } from './collection-preview.styles';
 
 
-const CollectionPreview = ( { title, items, match } ) => (
+const CollectionPreview = ( { title, items } ) => {
+    const match = useRouteMatch();
+
+    return (
     <CollectionPreviewContainer>
         <TitleLinkContainer to={ `${match.path}/${title.toLowerCase()}` }>
             <TitleContainer>{title.toUpperCase()}</TitleContainer>
@@ -26,6 +29,7 @@ const CollectionPreview = ( { title, items, match } ) => (
             }
         </PreviewContainer>
     </CollectionPreviewContainer>
-)
+    );
+};
 
-export default withRouter(CollectionPreview);
+export default CollectionPreview;
