@@ -1,7 +1,5 @@
 // libraries
-import { connect } from 'react-redux';
-import { createStructuredSelector } from "reselect";
-import { compose } from "redux";
+import { useSelector } from 'react-redux';
 // components
 import WithSpinner from "../with-spinner/with-spinner.component";
 import CollectionsOverview from "./collections-overview.component";
@@ -9,13 +7,13 @@ import CollectionsOverview from "./collections-overview.component";
 import { selectIsCollectionFetching } from "../../redux/shop/shop.selectors";
 
 
-const mapStateToProps = createStructuredSelector({
-    isLoading: selectIsCollectionFetching
-});
+const CollectionsOverviewContainer = () => {
+    const isLoading = useSelector(selectIsCollectionFetching);
 
-const CollectionsOverviewContainer = compose(
-    connect(mapStateToProps),
-    WithSpinner
-)(CollectionsOverview);
+    const CollectionsOverviewWithSpinner = WithSpinner(CollectionsOverview, isLoading);
+    return (
+            <CollectionsOverviewWithSpinner />
+    );
+}
 
 export default CollectionsOverviewContainer;
