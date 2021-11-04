@@ -1,6 +1,6 @@
 // libraries
 import React from "react";
-import { useRouteMatch } from "react-router";
+import { useParams } from "react-router-dom";
 // components
 import CollectionItem from "../../components/collection-item/collection-item.component";
 // redux
@@ -14,8 +14,8 @@ import {
 
 
 const CollectionPage = () => {
-    const match = useRouteMatch();
-    const collectionId = match.params.collectionId.toLowerCase();
+    const params = useParams();
+    const collectionId = params.collectionId.toLowerCase();
     const { shopCollection } = useShopCollections();
     const { title, items } = shopCollection(collectionId);
     

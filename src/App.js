@@ -18,13 +18,14 @@ import './App.css';
 
 const App = () => {
   const dispatch = useDispatch();
+  const currentUser = useSelector(selectCurrentUser);
+  
   useEffect(
     () => {
       dispatch(checkUserSession());
     },
     [dispatch]
   );
-  const currentUser = useSelector(selectCurrentUser);
   
   return (
     <div>

@@ -12,6 +12,7 @@ import { fetchCollectionsStart } from '../../redux/shop/shop.actions';
 const ShopPage = () => {
     const dispatch = useDispatch();
     const match = useRouteMatch();
+    
     useEffect(
         () => {
             dispatch(fetchCollectionsStart());
