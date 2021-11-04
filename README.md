@@ -15,6 +15,7 @@ This chapter covers the most important frameworks and libraries I have used in t
 ### Table of contents
 
 - [React](#react)
+    - [Hooks](#react-hooks-api)
 - [Redux](#redux)
     - [Reselect](#redux-reselect)
     - [Sagas](#redux-saga)
@@ -29,15 +30,21 @@ The app was built with Create React App, which You can read about below. I have 
 
 Find out more: [React](https://pl.reactjs.org/)
 
+### React Hooks API
+
+While building the app I have tried to follow the modern patterns, which include usage of mostly functional components supported by hooks. I have used some of the common hooks provided by React, such as useState, useEffect, useCallback as well as built custom hooks for special needs that appeared in the project. The Hooks API makes processing components' state much easier and allows to remove confusing lifecycle methods from the code.
+
+Find out more: [React Hooks API](https://reactjs.org/docs/hooks-intro.html)
+
 ## Redux
 
-The app state is controlled with the React Redux library and appropirate reducers for shop items and users data. The state is managed with selectors implemented using the redux-reselct library.
+Large web apps tend to grow in their state objects that store data used inside components. Most of these data can however be stored outside the components theirselves and pulled from the outside when needed. Some of the state attributes do not need to be passed down the virtual DOM tree through many components, that do not need them. This is the reason I have used the Redux library in my app. The online shops are great examples of apps where state could be stored in a common object. The data requests and changes are applied through appropriate actions that affect only selected part of the state. The implementation includes useSelector and useDispatch hooks provided by Redux.
 
 Find out more: [React Redux](https://react-redux.js.org/)
 
 ### Redux Reselect
 
-The app implements store selectors created with Reselect library. This is a Redux additional library that covers memoization of selector functions. This way the components won't have to rerender everytime a selector is fired with the exact same params. The Reselct library helps to improve the efficiency of the Redux code.
+The app implements memoized selectors created with Reselect library. The Reselct library helps to improve the efficiency of the Redux code. Redux selectors are functions that get triggered quite often but usually the called params are unchanged between distinct calls. Memoized selectors provided by Reselect library do not make unnecesarry calls to the Redux store if the params hadn't changed sinec last call.
 
 Find out more: [Redux Reselct](https://github.com/reduxjs/reselect)
 
@@ -49,7 +56,7 @@ Find out more: [Redux Saga](https://redux-saga.js.org/)
 
 ## React Router
 
-React Router is the library providing routing in the SPA (Single Page Application) created with React. I have used the routing between main pages of the site as well as the specific collections overview pages.
+React Router is the library providing routing in the SPA (Single Page Application) created with React. I have used the routing between main pages of the site as well as the specific collections overview pages. It makes the navigation in app more intuitive and enables usage of browser history and url params among other features. The library creators have also provided useful hooks, such as useHistory, useRouteMatch, useParams, which give easy access to the React Router DOM elements.
 
 Find out more: [React Router](https://reactrouter.com/)
 
