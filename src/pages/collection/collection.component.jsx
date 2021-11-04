@@ -1,11 +1,10 @@
 // libraries
 import React from "react";
-import { useSelector } from "react-redux";
 import { useRouteMatch } from "react-router";
 // components
 import CollectionItem from "../../components/collection-item/collection-item.component";
 // redux
-import { selectCollection, selectCollections } from "../../redux/shop/shop.selectors";
+import { useShopCollections } from '../../hooks/selectors/use-shop-collections.selector';
 // styles
 import {
     CollectionPageContainer,
@@ -17,7 +16,8 @@ import {
 const CollectionPage = () => {
     const match = useRouteMatch();
     const collectionId = match.params.collectionId.toLowerCase();
-    const { title, items } = useSelector((state) => selectCollection(state, collectionId));
+    const { shopCollection } = useShopCollections();
+    const { title, items } = shopCollection(collectionId);
     
     return (
         <CollectionPageContainer>
@@ -32,9 +32,5 @@ const CollectionPage = () => {
         </CollectionPageContainer>
     );
 };
-
-// const mapStateToProps = (state, ownProps) => ({
-//     collection: selectCollection(ownProps.match.params.collectionId.toLowerCase())(state)
-// });
 
 export default CollectionPage;

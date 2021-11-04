@@ -1,7 +1,7 @@
 // libraries
 import React, { useEffect } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import { connect, useSelector, } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 // pages
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
@@ -16,11 +16,15 @@ import { checkUserSession } from './redux/user/user.actions';
 import './App.css';
 
 
-const App = ({ checkUserSession }) => {
-  useEffect(() => {
-    checkUserSession();
-  }, [checkUserSession]);
-  const currentUser = useSelector(selectCurrentUser)
+const App = () => {
+  const dispatch = useDispatch();
+  useEffect(
+    () => {
+      dispatch(checkUserSession());
+    },
+    [dispatch]
+  );
+  const currentUser = useSelector(selectCurrentUser);
   
   return (
     <div>
@@ -35,8 +39,4 @@ const App = ({ checkUserSession }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  checkUserSession: () => dispatch(checkUserSession()),
-});
-
-export default connect(null, mapDispatchToProps)(App);
+export default App;
