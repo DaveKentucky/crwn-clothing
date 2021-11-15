@@ -1,8 +1,6 @@
 // libraries
 import React from "react";
 import { useDispatch } from 'react-redux';
-// components
-import CustomButton from "../custom-button/custom-button.component";
 // redux
 import { addItem } from "../../redux/cart/cart.actions";
 // styles
@@ -11,7 +9,8 @@ import {
     ImageContainer,
     CollectionFooterContainer,
     NameContainer,
-    PriceContainer
+    PriceContainer,
+    AddToCartButton
 } from './collection-item.styles';
 
 
@@ -26,7 +25,12 @@ const CollectionItem = ({ item }) => {
                 <NameContainer>{ name }</NameContainer>
                 <PriceContainer>{ price }</PriceContainer>
             </CollectionFooterContainer>
-            <CustomButton inverted onClick={ () => dispatch(addItem(item)) }>Add to cart</CustomButton>
+            <AddToCartButton 
+                inverted 
+                onClick={ () => dispatch(addItem(item)) }
+            >
+                Add to cart
+            </AddToCartButton>
         </CollectionItemContainer>
     );
 };

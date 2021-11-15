@@ -8,6 +8,7 @@ import {
     CheckoutItemContainer,
     ImageContainer,
     TextContainer,
+    NameContainer,
     QuantityContainer,
     RemoveButtonContainer
 } from './checkout-item.styles'
@@ -22,7 +23,7 @@ const CheckoutItem = ({ cartItem }) => {
             <ImageContainer>
                 <img src={ imageUrl } alt='item' />
             </ImageContainer>
-            <TextContainer>{ name }</TextContainer>
+            <NameContainer>{ name }</NameContainer>
             <QuantityContainer>
                 <div
                     className='arrow'

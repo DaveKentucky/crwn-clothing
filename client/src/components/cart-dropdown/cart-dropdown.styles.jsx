@@ -17,6 +17,7 @@ export const CartDropdownContainer = styled.div`
     button {
         margin-top: auto;
     }
+
 `;
 
 export const CartItemsContainer = styled.div`
