@@ -1,9 +1,9 @@
 // libraries
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 // components
-import FormInput from "../form-input/form-input.component";
-import CustomButton from "../custom-button/custom-button.component";
+import FormInput from '../form-input/form-input.component';
+import CustomButton from '../custom-button/custom-button.component';
 // styles
 import { SignInContainer, ButtonsContainer } from './sign-in.styles';
 // redux

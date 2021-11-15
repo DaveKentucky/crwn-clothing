@@ -1,11 +1,11 @@
 // libraries
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 // components
-import FormInput from "../form-input/form-input.component";
-import CustomButton from "../custom-button/custom-button.component";
+import FormInput from '../form-input/form-input.component';
+import CustomButton from '../custom-button/custom-button.component';
 // redux
-import { signUpStart } from "../../redux/user/user.actions";
+import { signUpStart } from '../../redux/user/user.actions';
 // styles
 import { SignUpContainer, TitleContainer } from './sign-up.styles';
 

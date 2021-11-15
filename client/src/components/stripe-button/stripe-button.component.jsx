@@ -1,6 +1,6 @@
 // libraries
-import React from "react";
-import StripeCheckout from "react-stripe-checkout";
+import React from 'react';
+import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 
 

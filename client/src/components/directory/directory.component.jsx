@@ -1,10 +1,10 @@
 // libraries
-import React from "react";
-import { useSelector } from "react-redux";
+import React from 'react';
+import { useSelector } from 'react-redux';
 // components
-import MenuItem from "../menu-item/menu-item.component";
+import MenuItem from '../menu-item/menu-item.component';
 // redux
-import { selectDirectorySections } from "../../redux/directory/directory.selectors";
+import { selectDirectorySections } from '../../redux/directory/directory.selectors';
 // styles
 import { DirectoryMenuContainer } from './directory.styles';
 

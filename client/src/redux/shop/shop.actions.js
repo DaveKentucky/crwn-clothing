@@ -1,5 +1,5 @@
 // redux
-import ShopActionTypes from "./shop.types";
+import ShopActionTypes from './shop.types';
 // firebase
 import { firestore, convertCollectionsSnapshotToMap } from '../../firebase/firebase.utils';
 

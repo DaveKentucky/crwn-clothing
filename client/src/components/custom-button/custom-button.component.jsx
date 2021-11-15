@@ -1,7 +1,7 @@
 // libraries
-import React from "react";
+import React from 'react';
 // styles
-import { CustomButtonContainer } from "./custom-button.styles";
+import { CustomButtonContainer } from './custom-button.styles';
 
 
 const CustomButton = ({ children, ...props }) => (

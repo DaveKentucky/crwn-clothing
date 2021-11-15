@@ -1,6 +1,6 @@
 // libraries
-import React from "react";
-import { useHistory, useRouteMatch } from "react-router-dom";
+import React from 'react';
+import { useHistory, useRouteMatch } from 'react-router-dom';
 // styles
 import {
   MenuItemContainer,

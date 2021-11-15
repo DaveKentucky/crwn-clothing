@@ -1,22 +1,11 @@
 // libraries
-import React, { useState } from "react";
+import React from 'react';
+// components
+import Spinner from '../spinner/spinner.component';
 
-import { SpinnerContainer, SpinnerOverlay } from "./with-spinner.styles";
 
-
-const WithSpinner = (WrappedComponent, isLoading) => {
-    const Spinner = (props) => {
-        const [loading] = useState(isLoading);
-
-        return loading ? (
-            <SpinnerOverlay>
-                <SpinnerContainer />
-            </SpinnerOverlay>
-        ) : (
-            <WrappedComponent { ...props } />
-        );
-    }
-    return Spinner;
-};
+const WithSpinner = (WrappedComponent, isLoading) => ({ props }) => {
+    return isLoading ? <Spinner /> : <WrappedComponent { ...props } />;
+}
 
 export default WithSpinner;

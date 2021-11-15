@@ -1,8 +1,8 @@
 // libraries
-import React from "react";
-import { useParams } from "react-router-dom";
+import React from 'react';
+import { useParams } from 'react-router-dom';
 // components
-import CollectionItem from "../../components/collection-item/collection-item.component";
+import CollectionItem from '../../components/collection-item/collection-item.component';
 // redux
 import { useShopCollections } from '../../hooks/selectors/use-shop-collections.selector';
 // styles

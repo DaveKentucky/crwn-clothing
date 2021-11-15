@@ -1,11 +1,11 @@
 // libraries
-import React from "react";
+import React from 'react';
 import { useSelector } from 'react-redux';
 // components
-import CheckoutItem from "../../components/checkout-item/checkout-item.component";
-import StripeCheckoutButton from "../../components/stripe-button/stripe-button.component";
+import CheckoutItem from '../../components/checkout-item/checkout-item.component';
+import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
 // redux
-import { selectCartItems, selectCartTotal } from "../../redux/cart/cart.selectors";
+import { selectCartItems, selectCartTotal } from '../../redux/cart/cart.selectors';
 // styles
 import {
     CheckoutPageContainer,

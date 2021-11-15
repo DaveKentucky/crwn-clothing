@@ -1,10 +1,10 @@
 // libraries
-import React from "react";
-import { useSelector } from "react-redux";
+import React from 'react';
+import { useSelector } from 'react-redux';
 // components
 import CollectionPreview from '../collection-preview/collection-preview.component'
 // redux
-import { selectCollectionsForPreview } from "../../redux/shop/shop.selectors";
+import { selectCollectionsForPreview } from '../../redux/shop/shop.selectors';
 // styles
 import { CollectionsOverviewContainer } from './collections-overview.styles';
 

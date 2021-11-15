@@ -1,8 +1,8 @@
 // libraries
-import React from "react";
+import React from 'react';
 import { useDispatch } from 'react-redux';
 // redux
-import { addItem } from "../../redux/cart/cart.actions";
+import { addItem } from '../../redux/cart/cart.actions';
 // styles
 import {
     CollectionItemContainer,

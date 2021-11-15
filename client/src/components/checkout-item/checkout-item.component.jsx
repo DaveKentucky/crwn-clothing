@@ -1,8 +1,8 @@
 // libraries
-import React from "react";
-import { useDispatch } from "react-redux";
+import React from 'react';
+import { useDispatch } from 'react-redux';
 // redux
-import { clearItem, addItem, removeItem } from "../../redux/cart/cart.actions";
+import { clearItem, addItem, removeItem } from '../../redux/cart/cart.actions';
 // styles
 import {
     CheckoutItemContainer,

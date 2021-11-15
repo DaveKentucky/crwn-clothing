@@ -1,5 +1,5 @@
 // libraries
-import { takeLatest, put, all, call } from "redux-saga/effects";
+import { takeLatest, put, all, call } from 'redux-saga/effects';
 // firebase
 import {
     auth,
@@ -8,7 +8,7 @@ import {
     getCurrentUser,
 } from '../../firebase/firebase.utils';
 // redux
-import UserActionTypes from "./user.types";
+import UserActionTypes from './user.types';
 import {
     signInSuccess,
     signInFailure,
@@ -16,7 +16,7 @@ import {
     signOutFailure,
     signUpSuccess,
     signUpFailure,
-} from "./user.actions";
+} from './user.actions';
 
 
 // listener functions

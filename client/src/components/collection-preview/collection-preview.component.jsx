@@ -1,8 +1,8 @@
 // libraries
-import React from "react";
-import { useRouteMatch } from "react-router-dom";
+import React from 'react';
+import { useRouteMatch } from 'react-router-dom';
 // components
-import CollectionItem from "../collection-item/collection-item.component";
+import CollectionItem from '../collection-item/collection-item.component';
 // styles
 import {
     CollectionPreviewContainer,
