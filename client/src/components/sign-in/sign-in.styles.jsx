@@ -27,12 +27,13 @@ export const SignInContainer = styled.div`
 export const ButtonsContainer = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 
     @media screen and (max-width: 800px) {
         button {
             min-width: unset;
-            width: 48%;
+            width: 150px;
+            max-width: 48%;
             padding: 0 5px;
         }
     }
