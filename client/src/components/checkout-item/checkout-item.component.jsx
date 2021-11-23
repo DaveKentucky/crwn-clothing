@@ -2,7 +2,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 // redux
-import { clearItem, addItemStart, removeItem } from '../../redux/cart/cart.actions';
+import { clearItem, addItemStart, removeItemStart } from '../../redux/cart/cart.actions';
 // styles
 import {
     CheckoutItemContainer,
@@ -27,7 +27,7 @@ const CheckoutItem = ({ cartItem }) => {
             <QuantityContainer>
                 <div
                     className='arrow'
-                    onClick={ () => dispatch(removeItem(cartItem)) }
+                    onClick={ () => dispatch(removeItemStart(cartItem)) }
                 >
                     &#10094;
                 </div>

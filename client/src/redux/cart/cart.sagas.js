@@ -8,9 +8,12 @@ import {
     addItem,
     addItemSuccess,
     addItemFailure,
+    removeItem,
+    removeItemSuccess,
+    removeItemFailure
 } from './cart.actions';
 import CartActionTypes from './cart.types';
-import { addItemToCart } from './cart.utils';
+import { addItemToCart, removeItemFromCart } from './cart.utils';
 // firebase
 import {
     firestore,
@@ -18,6 +21,7 @@ import {
 } from '../../firebase/firebase.utils';
 
 
+// listener functions
 export function* onSignOutSuccess() {
     yield takeLatest(
         UserActionTypes.SIGN_OUT_SUCCESS,
@@ -32,6 +36,14 @@ export function* onAddItemStart() {
     );
 };
 
+export function* onRemoveItemStart() {
+    yield takeEvery(
+        CartActionTypes.REMOVE_ITEM_START,
+        removeItemFromCartAsync,
+    );
+};
+
+// saga functions
 export function* clearCartOnSignOut() {
     yield put(clearCart());
 };
@@ -67,9 +79,41 @@ function* addItemToCartInDatabase(userId, item) {
     };
 };
 
+export function* removeItemFromCartAsync({ payload: item }) {
+    try {
+        const userAuth = yield getCurrentUser();
+        if(!userAuth) {
+            yield put(removeItem(item));
+        } else {
+            yield removeItemFromCartInDatabase(userAuth.uid, item);
+        };
+    } catch(error) {
+        yield put(removeItemFailure(error));
+    };
+};
+
+export function* removeItemFromCartInDatabase(userId, item) {
+    try {
+        const q = query(collection(firestore, 'carts'), where('userId', '==', userId));
+        const cartSnapshot = yield getDocs(q);
+        
+        if(cartSnapshot.docs.length > 0) {
+            const cartItems = cartSnapshot.docs[0].data().cartItems;
+            const cartId = cartSnapshot.docs[0].id;
+            const cartRef = yield firestore.collection('carts').doc(cartId);
+            const newCartItems = removeItemFromCart(cartItems, item);
+            yield cartRef.update({ cartItems: newCartItems });
+            yield put(removeItemSuccess(newCartItems));
+        };
+    } catch(error) {
+        yield put(removeItemFailure(error));
+    };
+};
+
 export function* cartSagas() {
     yield all([
         call(onSignOutSuccess),
         call(onAddItemStart),
+        call(onRemoveItemStart),
     ]);
 };
