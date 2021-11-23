@@ -10,7 +10,10 @@ import {
     addItemFailure,
     removeItem,
     removeItemSuccess,
-    removeItemFailure
+    removeItemFailure,
+    clearItem,
+    clearItemSuccess,
+    clearItemFailure
 } from './cart.actions';
 import CartActionTypes from './cart.types';
 import { addItemToCart, removeItemFromCart } from './cart.utils';
@@ -40,6 +43,13 @@ export function* onRemoveItemStart() {
     yield takeEvery(
         CartActionTypes.REMOVE_ITEM_START,
         removeItemFromCartAsync,
+    );
+};
+
+export function* onClearItemStart() {
+    yield takeLatest(
+        CartActionTypes.CLEAR_ITEM_START,
+        clearItemFromCartAsync,
     );
 };
 
@@ -110,10 +120,44 @@ export function* removeItemFromCartInDatabase(userId, item) {
     };
 };
 
+export function* clearItemFromCartAsync({ payload: item }) {
+    try {
+        const userAuth = yield getCurrentUser();
+        if(!userAuth) {
+            yield put(clearItem(item));
+        } else {
+            yield clearItemFromCartInDatabase(userAuth.uid, item);
+        };
+    } catch(error) {
+        yield put(removeItemFailure(error));
+    };
+};
+
+export function* clearItemFromCartInDatabase(userId, item) {
+    try {
+        const q = query(collection(firestore, 'carts'), where('userId', '==', userId));
+        const cartSnapshot = yield getDocs(q);
+        
+        if(cartSnapshot.docs.length > 0) {
+            const cartItems = cartSnapshot.docs[0].data().cartItems;
+            const cartId = cartSnapshot.docs[0].id;
+            const cartRef = yield firestore.collection('carts').doc(cartId);
+            const newCartItems = cartItems.filter(cartItem => (
+                cartItem.id !== item.id
+            ));
+            yield cartRef.update({ cartItems: newCartItems });
+            yield put(clearItemSuccess(newCartItems));
+        };
+    } catch(error) {
+        yield put(clearItemFailure(error));
+    };
+};
+
 export function* cartSagas() {
     yield all([
         call(onSignOutSuccess),
         call(onAddItemStart),
         call(onRemoveItemStart),
+        call(onClearItemStart),
     ]);
 };

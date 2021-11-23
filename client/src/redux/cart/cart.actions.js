@@ -29,6 +29,21 @@ export const clearItem = (item) => ({
     payload: item,
 });
 
+export const clearItemStart = (item) => ({
+    type: CartActionTypes.CLEAR_ITEM_START,
+    payload: item,
+});
+
+export const clearItemSuccess = (cartItems) => ({
+    type: CartActionTypes.CLEAR_ITEM_SUCCESS,
+    payload: cartItems,
+});
+
+export const clearItemFailure = (error) => ({
+    type: CartActionTypes.CLEAR_ITEM_FAILURE,
+    payload: error,
+});
+
 export const removeItem = (item) => ({
     type: CartActionTypes.REMOVE_ITEM,
     payload: item,

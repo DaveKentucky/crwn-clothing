@@ -2,7 +2,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 // redux
-import { clearItem, addItemStart, removeItemStart } from '../../redux/cart/cart.actions';
+import { clearItemStart, addItemStart, removeItemStart } from '../../redux/cart/cart.actions';
 // styles
 import {
     CheckoutItemContainer,
@@ -42,7 +42,7 @@ const CheckoutItem = ({ cartItem }) => {
                 </div>
             </QuantityContainer>
             <TextContainer>${ price }</TextContainer>
-            <RemoveButtonContainer onClick={ () => dispatch(clearItem(cartItem)) }>
+            <RemoveButtonContainer onClick={ () => dispatch(clearItemStart(cartItem)) }>
                 &#10005;
             </RemoveButtonContainer>
         </CheckoutItemContainer>
