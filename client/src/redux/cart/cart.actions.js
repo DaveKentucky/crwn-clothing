@@ -9,6 +9,21 @@ export const addItem = (item) => ({
     payload: item,
 });
 
+export const addItemStart = (item) => ({
+    type: CartActionTypes.ADD_ITEM_START,
+    payload: item,
+});
+
+export const addItemSuccess = (cartItems) =>({
+    type: CartActionTypes.ADD_ITEM_SUCCESS,
+    payload: cartItems,
+});
+
+export const addItemFailure = (error) => ({
+    type: CartActionTypes.ADD_ITEM_FAILURE,
+    payload: error,
+});
+
 export const clearItem = (item) => ({
     type: CartActionTypes.CLEAR_ITEM,
     payload: item,

@@ -2,7 +2,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 // redux
-import { addItem } from '../../redux/cart/cart.actions';
+import { addItemStart } from '../../redux/cart/cart.actions';
 // styles
 import {
     CollectionItemContainer,
@@ -27,7 +27,7 @@ const CollectionItem = ({ item }) => {
             </CollectionFooterContainer>
             <AddToCartButton 
                 inverted 
-                onClick={ () => dispatch(addItem(item)) }
+                onClick={ () => dispatch(addItemStart(item)) }
             >
                 Add to cart
             </AddToCartButton>
