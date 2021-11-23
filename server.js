@@ -14,10 +14,11 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(compression);
-app.use(enforce.HTTPS({ trustProtoHeader: true }));
 
 if(process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, 'client/build')));
+    app.use(enforce.HTTPS({ trustProtoHeader: true }));
+
     app.get('*', function(req, res) {
         res.sendFile(path.join(__dirname, 'cient/build', 'index.html'));
     });
