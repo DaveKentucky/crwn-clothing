@@ -13,7 +13,9 @@ import {
     removeItemFailure,
     clearItem,
     clearItemSuccess,
-    clearItemFailure
+    clearItemFailure,
+    updateCart,
+    updateCartFailure,
 } from './cart.actions';
 import CartActionTypes from './cart.types';
 import { addItemToCart, removeItemFromCart } from './cart.utils';
@@ -29,6 +31,13 @@ export function* onSignOutSuccess() {
     yield takeLatest(
         UserActionTypes.SIGN_OUT_SUCCESS,
         clearCartOnSignOut,
+    );
+};
+
+export function* onSignInSuccess() {
+    yield takeLatest(
+        UserActionTypes.SIGN_IN_SUCCESS,
+        updateCartOnSignIn,
     );
 };
 
@@ -56,6 +65,20 @@ export function* onClearItemStart() {
 // saga functions
 export function* clearCartOnSignOut() {
     yield put(clearCart());
+};
+
+export function* updateCartOnSignIn({ payload: { id } }) {
+    try {
+        const q = query(collection(firestore, 'carts'), where('userId', '==', id));
+        const cartSnapshot = yield getDocs(q);
+
+        if(cartSnapshot.docs.length > 0) {
+            const cartItems = cartSnapshot.docs[0].data().cartItems;
+            yield put(updateCart(cartItems));
+        };
+    } catch(error) {
+        yield put(updateCartFailure(error));
+    };
 };
 
 export function* addItemToCartAsync({ payload: item }) {
@@ -156,6 +179,7 @@ export function* clearItemFromCartInDatabase(userId, item) {
 export function* cartSagas() {
     yield all([
         call(onSignOutSuccess),
+        call(onSignInSuccess),
         call(onAddItemStart),
         call(onRemoveItemStart),
         call(onClearItemStart),

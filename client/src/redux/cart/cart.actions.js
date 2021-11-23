@@ -67,3 +67,13 @@ export const removeItemFailure = (error) => ({
 export const clearCart = () => ({
     type: CartActionTypes.CLEAR_CART,
 });
+
+export const updateCart = (cartItems) => ({
+    type: CartActionTypes.UPDATE_CART,
+    payload: cartItems,
+});
+
+export const updateCartFailure = (error) => ({
+    type: CartActionTypes.UPDATE_CART_FAILURE,
+    payload: error,
+});
